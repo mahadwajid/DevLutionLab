@@ -124,6 +124,8 @@ export default function HeroSection() {
     const globeRef = useRef<HTMLDivElement>(null);
     const [isMounted, setIsMounted] = useState(false);
 
+    const heroRef = useRef<HTMLElement>(null);
+
     useEffect(() => {
         setIsMounted(true);
     }, []);
@@ -141,9 +143,9 @@ export default function HeroSection() {
     return (
         <section
             id="home"
-            className="relative min-h-[calc(100vh-80px)] flex items-center overflow-hidden"
             onMouseMove={handleMouseMove}
-            style={{ perspective: '1000px' }}
+            className="relative min-h-[calc(100vh-80px)] flex items-center overflow-hidden"
+            style={{ perspective: "1000px" }}
         >
             {/* Three.js Particle Background Layer */}
             {isMounted && <ParticleBackground />}
