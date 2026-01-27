@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+.active-text {
+  opacity: 1 !important;
+  transform: translateX(20px);
+  /* Subtle shift for emphasis */
+}
+
 @theme {
   /* Mandatory Theme Palette - LIGHT MODE */
   --color-primary: #0F172A;
@@ -95,23 +101,37 @@ body {
 }
 
 @keyframes scan {
-  0% { transform: translateY(-40%); opacity: 0; }
-  30% { opacity: 0.35; }
-  70% { opacity: 0.35; }
-  100% { transform: translateY(140%); opacity: 0; }
+  0% {
+    transform: translateY(-40%);
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0.35;
+  }
+
+  70% {
+    opacity: 0.35;
+  }
+
+  100% {
+    transform: translateY(140%);
+    opacity: 0;
+  }
 }
 
 @utility scanline {
   position: relative;
 }
-@utility scanline::after {
+
+.scanline::after {
   content: "";
   position: absolute;
   inset: -30%;
   background: linear-gradient(to bottom,
-    transparent 0%,
-    rgba(59,130,246,0.12) 50%,
-    transparent 100%);
+      transparent 0%,
+      rgba(59, 130, 246, 0.12) 50%,
+      transparent 100%);
   animation: scan 2.6s linear infinite;
   pointer-events: none;
 }
