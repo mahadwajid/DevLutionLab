@@ -66,10 +66,10 @@ export default function ReviewsSection() {
     }, { scope: containerRef });
 
     return (
-        <section ref={containerRef} className="relative bg-zinc-50 py-32 overflow-hidden" id="reviews">
+        <section ref={containerRef} id="reviews" className="relative py-32 bg-white bg-tech-grid overflow-hidden">
 
-            <div className="max-w-[1600px] mx-auto px-6 lg:px-12 text-center mb-24">
-                <h2 className="text-sm font-bold tracking-[0.2em] text-zinc-400 uppercase mb-4">Testimonials</h2>
+            <div className="max-w-[1600px] mx-auto px-6 lg:px-12 mb-20 text-center">
+                <h2 className="text-sm font-bold tracking-[0.2em] text-accent uppercase mb-4">Testimonials</h2>
                 <h3 className="text-4xl md:text-5xl font-black text-zinc-900 tracking-tight">TRUSTED BY VISIONARIES</h3>
             </div>
 

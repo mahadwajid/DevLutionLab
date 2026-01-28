@@ -89,9 +89,8 @@ export default function ServicesSection() {
         <section
             ref={sectionRef}
             id="services"
-            className="relative h-screen bg-background overflow-hidden"
+            className="relative h-screen bg-zinc-50 bg-tech-grid overflow-hidden"
         >
-            <div className="absolute inset-0 bg-grid-soft opacity-[0.2]" />
             <div className="absolute inset-0 noise-overlay opacity-[0.05]" />
 
             <div className="relative h-full flex flex-col justify-center">

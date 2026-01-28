@@ -82,12 +82,13 @@ export default function ProjectDisplaySection() {
     }, { scope: containerRef });
 
     return (
-        <section ref={containerRef} className="relative bg-white" id="projects">
-
-            {/* Header outside the stack flow */}
-            <div className="py-24 px-6 lg:px-24 text-center">
-                <h2 className="text-sm font-bold tracking-[0.2em] text-zinc-400 uppercase mb-4">Selected Works</h2>
-                <h3 className="text-4xl md:text-6xl font-black text-zinc-900 tracking-tight">DIGITAL ARCHIVES</h3>
+        <section ref={containerRef} id="projects" className="relative bg-tech-grid py-32 overflow-hidden">
+            <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+                {/* Header outside the stack flow */}
+                <div className="mb-24 space-y-6 text-center">
+                    <h2 className="text-sm font-bold tracking-[0.2em] text-zinc-400 uppercase mb-4">Selected Works</h2>
+                    <h3 className="text-4xl md:text-6xl font-black text-zinc-900 tracking-tight">DIGITAL ARCHIVES</h3>
+                </div>
             </div>
 
             <div className="relative pb-24">

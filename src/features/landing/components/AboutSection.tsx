@@ -1,44 +1,129 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ABOUT_STEPS = [
+const COMPANY_MODULES = [
     {
-        key: "origin",
-        leftTitle: "THE ARCHITECT",
-        leftDesc: "Crafting digital legacies through deep engineering and minimalist design philosophy.",
-        rightTitle: "WHO WE ARE",
-        rightDesc: "DevLution Lab is a sanctuary for high-end technical creation, where we merge logic with aesthetics.",
-        points: ["SCALABLE CORES", "PIXEL-PERFECT", "RESEARCH-DRIVEN"]
+        key: "vision",
+        title: "Strategic Vision",
+        id: "MOD_STRATEGY",
+        description: "We don't just write code; we architect futures. Our strategic roadmap aligns technical execution with your long-term business goals, ensuring every deploy moves the needle.",
+        visual: (
+            <div className="w-full h-full flex flex-col p-6 font-mono text-xs">
+                <div className="flex justify-between items-center text-zinc-400 mb-4 border-b border-zinc-200 pb-2">
+                    <span>ROADMAP_CONTROLLER</span>
+                    <span className="text-green-500">● ON TRACK</span>
+                </div>
+                <div className="flex-1 relative flex items-center justify-center gap-4">
+                    {/* Timeline Visual */}
+                    <div className="h-32 w-1 bg-zinc-200 relative rounded-full">
+                        {/* Start Marker */}
+                        <div className="absolute top-4 -left-3 flex items-center gap-2">
+                            <div className="w-20 text-right text-[10px] text-zinc-400 font-bold">Q1: INIT</div>
+                            <div className="w-0 h-0 border-l-[6px] border-l-green-500 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent" />
+                        </div>
+                        {/* End Marker */}
+                        <div className="absolute bottom-4 -left-3 flex items-center gap-2">
+                            <div className="w-20 text-right text-[10px] text-zinc-400 font-bold">Q4: LAUNCH</div>
+                            <div className="w-0 h-0 border-l-[6px] border-l-blue-500 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent" />
+                        </div>
+                        {/* Scroller */}
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-blue-500 rounded-full shadow-lg shadow-blue-500/30 animate-bounce" />
+                    </div>
+                    {/* Animated Objective */}
+                    <div className="w-24 h-24 bg-blue-50 border border-blue-200 rounded-lg flex items-center justify-center">
+                        <span className="text-blue-500 font-bold animate-pulse">GOAL</span>
+                    </div>
+                </div>
+            </div>
+        )
     },
     {
-        key: "design",
-        leftTitle: "THE NEURAL INTERFACE",
-        leftDesc: "Bridging the gap between human intuition and machine intelligence through UI systems.",
-        rightTitle: "WHAT WE DO",
-        rightDesc: "We build intuitive interfaces that feel like natural extensions of the user's workflow.",
-        points: ["ADAPTIVE UX", "MOTION SYSTEMS", "DATA VIZ"]
+        key: "performance",
+        title: "High Performance",
+        id: "MOD_VELOCITY",
+        description: "Speed is a feature. We optimize the physics of your digital ecosystem to ensure zero latency and maximum throughput, handling millions of requests without breaking a sweat.",
+        visual: (
+            <div className="w-full h-full flex flex-col p-6 font-mono text-xs">
+                <div className="flex justify-between items-center text-zinc-400 mb-4 border-b border-zinc-200 pb-2">
+                    <span>ENGINE_METRICS</span>
+                    <span className="text-blue-500">● OPTIMIZED</span>
+                </div>
+                <div className="flex-1 relative flex items-end justify-between gap-1 px-4 pb-4">
+                    {/* Bars representing speed/load */}
+                    {[40, 60, 45, 80, 55, 90, 70, 50].map((h, i) => (
+                        <div key={i} className="w-full bg-blue-100 rounded-t-sm relative group overflow-hidden" style={{ height: `${h}%` }}>
+                            <div className="absolute bottom-0 left-0 w-full bg-blue-500 transition-all duration-500" style={{ height: '0%', animation: `fillUp 2s infinite ${i * 0.1}s` }} />
+                        </div>
+                    ))}
+                    {/* Curve Overlay */}
+                    <svg className="absolute inset-x-4 bottom-4 h-full overflow-visible" preserveAspectRatio="none">
+                        <path d="M0,80 C20,60 40,90 60,40 C80,20 100,50 120,30" className="stroke-blue-600 stroke-2 fill-none opacity-50" vectorEffect="non-scaling-stroke" />
+                    </svg>
+                </div>
+                <style jsx>{`
+                    @keyframes fillUp {
+                        0% { height: 0%; }
+                        50% { height: 100%; }
+                        100% { height: 0%; }
+                    }
+                `}</style>
+            </div>
+        )
     },
     {
-        key: "build",
-        leftTitle: "THE CORE ENGINE",
-        leftDesc: "Powering the next generation of digital products with resilient backend architectures.",
-        rightTitle: "HOW WE WORK",
-        rightDesc: "Iterative sprints, rigorous testing, and transparent communication are our building blocks.",
-        points: ["CLEAN ARCH", "DEVOPS FIRST", "ZERO LATENCY"]
+        key: "precision",
+        title: "Precision Engineering",
+        id: "MOD_ACCURACY",
+        description: "We obsess over the details. From pixel-perfect UI execution to robust backend logic, our targeting systems ensure that the final product matches the initial blueprint exactly.",
+        visual: (
+            <div className="w-full h-full flex flex-col p-6 font-mono text-xs">
+                <div className="flex justify-between items-center text-zinc-400 mb-4 border-b border-zinc-200 pb-2">
+                    <span>QUALITY_CONTROL</span>
+                    <span className="text-purple-500">● LOCKED</span>
+                </div>
+                <div className="flex-1 relative bg-zinc-50 rounded border border-zinc-100 p-2 overflow-hidden flex flex-col gap-2">
+                    {/* Mock Blueprint */}
+                    <div className="h-2 w-3/4 bg-zinc-200 rounded" />
+                    <div className="h-2 w-1/2 bg-zinc-200 rounded" />
+                    <div className="h-20 w-full border-2 border-dashed border-purple-300 bg-purple-50/50 rounded flex items-center justify-center mt-4">
+                        <span className="text-purple-500 font-bold bg-white px-2 py-1 rounded shadow-sm">100% MATCH</span>
+                    </div>
+                    <div className="absolute top-1/2 right-4 transform -translate-y-1/2">
+                        <div className="w-8 h-8 rounded-full border border-purple-500 flex items-center justify-center">
+                            <svg className="w-4 h-4 text-purple-600 fill-current animate-bounce" viewBox="0 0 24 24"><path d="M12 21l-12-18h24z" /></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
     },
     {
-        key: "impact",
-        leftTitle: "THE GLOBAL VECTOR",
-        leftDesc: "Scaling impact across continents with localized intelligence and global standards.",
-        rightTitle: "WHAT YOU GET",
-        rightDesc: "A complete technological partner focused on your long-term evolution and success.",
-        points: ["GLOBAL SCALE", "FUTURE PROOF", "SUPPORT 24/7"]
+        key: "intelligence",
+        title: "Adaptive Intelligence",
+        id: "MOD_OBSERVER",
+        description: "Markets shift, and so do users. We build systems that listen, learn, and adapt. Our real-time event monitoring ensures your platform stays ahead of critical trends.",
+        visual: (
+            <div className="w-full h-full flex flex-col p-6 font-mono text-xs bg-zinc-900 text-zinc-300 rounded-lg">
+                <div className="flex justify-between items-center text-zinc-500 mb-2 border-b border-zinc-700 pb-2">
+                    <span>LIVE_STREAM</span>
+                    <span className="text-orange-500 animate-pulse">● LISTENING</span>
+                </div>
+                <div className="flex-1 font-mono text-[10px] space-y-1 overflow-hidden">
+                    <div className="opacity-50 text-zinc-500">[SYS_INIT] MONITORING...</div>
+                    <div className="text-blue-400">[EVENT] USER_GROWTH_SPIKE</div>
+                    <div className="text-green-400">[ACTION] AUTO_SCALE_UP</div>
+                    <div className="text-orange-400">[ALERT] NEW_MARKET_DETECTED</div>
+                    <div className="text-blue-400">[UPDATE] DEPLOYING_PATCH_V2</div>
+                    <div className="animate-pulse">_</div>
+                </div>
+            </div>
+        )
     }
 ];
 
@@ -49,112 +134,107 @@ export default function AboutSection() {
         const sections = gsap.utils.toArray(".about-step");
 
         sections.forEach((section: any, i) => {
-            const leftPart = section.querySelector(".left-part");
-            const rightPart = section.querySelector(".right-part");
-            const visualPart = section.querySelector(".visual-part");
+            const content = section.querySelector(".tech-content");
+            const visual = section.querySelector(".tech-visual");
 
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: section,
-                    start: "top center",
+                    start: "top center+=15%",
                     end: "bottom center",
-                    scrub: 1,
-                    toggleActions: "play reverse play reverse"
+                    toggleActions: "play reverse play reverse",
+                    scrub: 0.5
                 }
             });
 
-            // Swap positions principle: 
-            // Step 1: Left (Text), Right (Card)
-            // Step 2: Right (Text), Left (Card)
             const isEven = i % 2 === 0;
 
-            tl.fromTo(leftPart,
-                { x: isEven ? -100 : 100, opacity: 0 },
-                { x: 0, opacity: 1, duration: 1 }
+            tl.fromTo(content,
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
             )
-                .fromTo(rightPart,
-                    { x: isEven ? 100 : -100, opacity: 0 },
-                    { x: 0, opacity: 1, duration: 1 },
-                    "<"
-                )
-                .fromTo(visualPart,
-                    { scale: 0.8, opacity: 0, rotate: isEven ? -5 : 5 },
-                    { scale: 1, opacity: 1, rotate: 0, duration: 1.2 },
-                    "<0.2"
+                .fromTo(visual,
+                    { scale: 0.9, opacity: 0, filter: "blur(10px)" },
+                    { scale: 1, opacity: 1, filter: "blur(0px)", duration: 1.2, ease: "power2.out" },
+                    "<0.1"
                 );
         });
     }, { scope: scopeRef });
 
     return (
-        <section ref={scopeRef} id="about" className="relative bg-background">
-            {/* Background Decor */}
-            <div className="absolute inset-0 bg-grid-soft opacity-[0.1]" />
+        <section ref={scopeRef} id="about" className="relative bg-white bg-tech-grid py-32 overflow-hidden">
 
-            {ABOUT_STEPS.map((step, i) => {
-                const isEven = i % 2 === 0;
-                return (
-                    <div
-                        key={step.key}
-                        className="about-step min-h-screen flex items-center relative py-24 overflow-hidden"
-                    >
-                        <div className="max-w-[1600px] mx-auto px-12 lg:px-24 w-full h-full">
-                            <div className={`flex flex-col lg:flex-row items-center gap-16 lg:gap-32 ${isEven ? "" : "lg:flex-row-reverse"}`}>
+            {/* Background Grid - Standardized */}
 
-                                {/* Left/Right Text Column */}
-                                <div className={`left-part flex-1 space-y-12 ${isEven ? "" : "text-right"}`}>
-                                    <div className="space-y-6">
-                                        <div className={`flex items-center gap-4 ${isEven ? "" : "flex-row-reverse"}`}>
-                                            <span className="font-mono text-sm font-bold text-accent">0{i + 1}</span>
-                                            <div className="h-px flex-1 bg-accent/20" />
-                                        </div>
-                                        <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-text-primary leading-[0.9]">
-                                            {step.leftTitle}
-                                        </h2>
-                                        <p className="text-xl text-text-muted font-medium leading-relaxed max-w-xl">
-                                            {step.leftDesc}
-                                        </p>
+
+            <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
+                {/* Header */}
+                <div className="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-zinc-200 pb-8">
+                    <div>
+                        <div className="flex items-center gap-2 mb-2">
+                            <span className="w-2 h-2 bg-blue-600 rounded-full animate-pulse" />
+                            <h2 className="text-sm font-bold tracking-[0.2em] text-blue-600 uppercase font-mono">SYSTEM_ARCHITECTURE</h2>
+                        </div>
+                        <h3 className="text-4xl md:text-6xl font-black text-zinc-900 tracking-tight">CORE PROTOCOLS</h3>
+                    </div>
+                    <div className="hidden md:block text-right">
+                        <div className="font-mono text-xs text-zinc-400">BUILD_VER: 2026.1.0</div>
+                        <div className="font-mono text-xs text-zinc-400">STATUS: OPERATIONAL</div>
+                    </div>
+                </div>
+
+                {/* Modules List */}
+                <div className="space-y-32">
+                    {COMPANY_MODULES.map((module, i) => {
+                        const isEven = i % 2 === 0;
+                        return (
+                            <div key={module.key} className={`about-step flex flex-col items-center gap-12 lg:gap-24 ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
+
+                                {/* Text Content */}
+                                <div className="tech-content flex-1 space-y-6">
+                                    <div className="inline-flex items-center gap-3 px-3 py-1 bg-zinc-100 rounded border border-zinc-200">
+                                        <span className="font-mono text-xs font-bold text-zinc-500">{module.id}</span>
+                                    </div>
+                                    <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-900 leading-tight">
+                                        {module.title}
+                                    </h2>
+                                    <div className="h-1 w-20 bg-blue-600 rounded-full" />
+                                    <p className="text-lg text-zinc-600 font-medium leading-relaxed font-mono">
+                                        {module.description}
+                                    </p>
+                                    <div className="flex gap-2 pt-4">
+                                        <div className="px-3 py-1 rounded bg-blue-50 text-blue-600 text-[10px] font-bold tracking-wider uppercase border border-blue-100">Capability</div>
+                                        <div className="px-3 py-1 rounded bg-zinc-100 text-zinc-500 text-[10px] font-bold tracking-wider uppercase border border-zinc-200">System</div>
                                     </div>
                                 </div>
 
-                                {/* Center Visual Column */}
-                                <div className="visual-part flex-1 relative aspect-square max-w-[500px] w-full glass-surface rounded-[3rem] overflow-hidden group">
-                                    <div className="absolute inset-0 noise-overlay opacity-[0.1]" />
-                                    <div className="absolute inset-0 scanline opacity-0 group-hover:opacity-100 transition-opacity" />
-
-                                    {/* Simplified Center Visual for now */}
-                                    <div className="h-full w-full flex items-center justify-center p-12">
-                                        <div className="w-full h-full rounded-2xl border border-accent/10 bg-accent/5 relative overflow-hidden flex items-center justify-center">
-                                            <span className="font-mono text-[10px] text-accent/20 absolute top-4 left-4">SYNC_RECOVERING...</span>
-                                            <div className="w-32 h-32 rounded-full border-2 border-accent animate-pulse flex items-center justify-center">
-                                                <div className="w-16 h-16 rounded-full border-2 border-secondary animate-spin-slow" />
-                                            </div>
+                                {/* Tech Visual Card */}
+                                <div className="tech-visual flex-1 w-full max-w-[600px]">
+                                    <div className="aspect-[4/3] w-full bg-white rounded-xl border border-zinc-200 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] overflow-hidden relative group hover:border-blue-400 transition-colors duration-500">
+                                        {/* Browser/System Bar */}
+                                        <div className="h-8 bg-zinc-50 border-b border-zinc-100 flex items-center px-4 gap-2">
+                                            <div className="w-3 h-3 rounded-full bg-zinc-300" />
+                                            <div className="w-3 h-3 rounded-full bg-zinc-300" />
+                                            <div className="w-3 h-3 rounded-full bg-zinc-300" />
+                                            <div className="ml-auto font-mono text-[9px] text-zinc-400">LATENCY: 1ms</div>
                                         </div>
-                                    </div>
-                                </div>
 
-                                {/* Right/Left Info Column */}
-                                <div className="right-part flex-1 space-y-8">
-                                    <div className="glass-surface p-10 rounded-[2.5rem] border-white/20 shadow-2xl space-y-6">
-                                        <h3 className="text-2xl font-bold text-text-primary">{step.rightTitle}</h3>
-                                        <p className="text-text-muted leading-relaxed">
-                                            {step.rightDesc}
-                                        </p>
-                                        <div className="space-y-3">
-                                            {step.points.map(p => (
-                                                <div key={p} className="flex items-center gap-3">
-                                                    <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-                                                    <span className="text-sm font-bold text-text-primary tracking-wide">{p}</span>
-                                                </div>
-                                            ))}
+                                        {/* Content */}
+                                        <div className="h-[calc(100%-2rem)]">
+                                            {module.visual}
                                         </div>
+
+                                        {/* Scanner Line Overlay */}
+                                        <div className="absolute top-0 w-full h-[1px] bg-blue-400 opacity-0 group-hover:opacity-100 group-hover:top-full transition-all duration-[2s] ease-linear shadow-[0_0_10px_rgba(59,130,246,0.5)] z-20" />
                                     </div>
                                 </div>
 
                             </div>
-                        </div>
-                    </div>
-                );
-            })}
+                        );
+                    })}
+                </div>
+
+            </div>
         </section>
     );
 }

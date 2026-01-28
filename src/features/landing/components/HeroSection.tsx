@@ -144,7 +144,7 @@ export default function HeroSection() {
         <section
             id="home"
             onMouseMove={handleMouseMove}
-            className="relative min-h-[calc(100vh-80px)] flex items-center overflow-hidden"
+            className="relative min-h-[calc(100vh-80px)] flex items-center overflow-hidden bg-tech-grid"
             style={{ perspective: "1000px" }}
         >
             {/* Three.js Particle Background Layer */}

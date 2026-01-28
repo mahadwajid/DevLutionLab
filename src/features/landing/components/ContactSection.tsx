@@ -28,7 +28,7 @@ export default function ContactSection() {
     }, { scope: containerRef });
 
     return (
-        <section ref={containerRef} className="relative bg-white py-32 overflow-hidden" id="contact">
+        <section ref={containerRef} className="relative py-32 bg-zinc-50 bg-tech-grid overflow-hidden" id="contact">
             {/* Background Decor */}
             <div className="absolute inset-0 bg-blue-50/50 opacity-50" />
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
@@ -51,13 +51,13 @@ export default function ContactSection() {
                         <div className="contact-reveal space-y-8">
                             <div>
                                 <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Email Us</h4>
-                                <a href="mailto:hello@devlutionlab.com" className="text-2xl font-bold text-slate-900 hover:text-blue-600 transition-colors">hello@devlutionlab.com</a>
+                                <a href="mailto:devlutionlab@gmail.com" className="text-2xl font-bold text-slate-900 hover:text-blue-600 transition-colors">devlutionlab@gmail.com</a>
                             </div>
                             <div>
                                 <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Visit Us</h4>
                                 <p className="text-xl text-slate-600">
-                                    1200 Innovation Blvd, Suite 404<br />
-                                    San Francisco, CA 94103
+                                    E-11/2 Markaz<br />
+                                    Islamabad, Pakistan
                                 </p>
                             </div>
                         </div>

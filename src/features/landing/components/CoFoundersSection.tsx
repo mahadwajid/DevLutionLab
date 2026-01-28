@@ -33,7 +33,7 @@ const FOUNDERS = [
 
 export default function CoFoundersSection() {
     const [active, setActive] = useState(0);
-    const containerRef = useRef<HTMLElement>(null);
+    const scopeRef = useRef<HTMLElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
     const imageRef = useRef<HTMLDivElement>(null);
 
@@ -62,12 +62,12 @@ export default function CoFoundersSection() {
             .to(".founder-text-content", { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" })
             .to(".founder-image-content", { opacity: 1, scale: 1, duration: 0.5, ease: "power2.out" }, "<");
 
-    }, { scope: containerRef, dependencies: [active] });
+    }, { scope: scopeRef, dependencies: [active] }); // Changed scope to scopeRef
 
     const currentFounder = FOUNDERS[active];
 
     return (
-        <section ref={containerRef} className="relative bg-white py-32 overflow-hidden" id="founders">
+        <section ref={scopeRef} className="relative py-32 bg-zinc-50 bg-tech-grid overflow-hidden">
 
             <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
 
