@@ -6,6 +6,7 @@ import ProjectDisplaySection from "@/features/landing/components/ProjectDisplayS
 import CoFoundersSection from "@/features/landing/components/CoFoundersSection";
 import ReviewsSection from "@/features/landing/components/ReviewsSection";
 import ContactSection from "@/features/landing/components/ContactSection";
+import FooterSection from "@/features/landing/components/FooterSection";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <CoFoundersSection />
         <ReviewsSection />
         <ContactSection />
+        <FooterSection />
       </main>
     </>
   );

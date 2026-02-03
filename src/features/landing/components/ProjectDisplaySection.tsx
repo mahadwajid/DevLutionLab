@@ -43,7 +43,7 @@ const PROJECTS = [
         title: "LUMINA HEALTH",
         category: "MEDTECH SOLUTION",
         description: "HIPAA-compliant telemedicine platform connecting patients with specialists. Secure, intuitive, and accessible healthcare for everyone.",
-        tags: ["WEBARTC", "AWS", "UI/UX"],
+        tags: ["WEBRTC", "AWS", "UI/UX"],
         bgClass: "bg-orange-50",
         textClass: "text-orange-900",
         accent: "bg-orange-500"
@@ -51,55 +51,62 @@ const PROJECTS = [
 ];
 
 export default function ProjectDisplaySection() {
-    const containerRef = useRef<HTMLElement>(null);
+    const sectionRef = useRef<HTMLElement>(null);
+    const headerRef = useRef<HTMLDivElement>(null);
+    const cardsContainerRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
         const cards = gsap.utils.toArray<HTMLElement>(".project-card");
 
         cards.forEach((card, i) => {
-            // 1. Scale Down Animation for the card as it gets covered
-            // The animation runs while the *next* card is entering
-            ScrollTrigger.create({
-                trigger: card,
-                start: "top top", // When card hits top of viewport
-                end: "bottom top",
-                pin: true, // Pin the card
-                pinSpacing: false, // Allow next card to scroll over it
-                scrub: true, // Smooth scrub
-                id: `card-${i}`,
-                onUpdate: (self) => {
-                    // Optional: manually handle scale if GSAP tween isn't enough
-                },
-                animation: gsap.to(card, {
-                    scale: 0.9, // Scale down slightly to create "stack" depth
-                    opacity: 0.8, // Fade out slightly
-                    filter: "blur(5px)", // Blur slightly
-                    ease: "none"
-                })
-            });
+            // Skip the last card - it doesn't need to animate out
+            if (i < cards.length - 1) {
+                const cardContent = card.querySelector(".card-content");
+
+                // Animate current card to background as next card covers it
+                ScrollTrigger.create({
+                    trigger: card,
+                    start: "top 120px", // Start after header
+                    end: () => `+=${window.innerHeight * 0.8}`,
+                    scrub: 0.5,
+                    animation: gsap.timeline()
+                        .to(cardContent, {
+                            scale: 0.9,
+                            y: -60,
+                            opacity: 0,
+                            filter: "blur(4px)",
+                            ease: "power2.inOut"
+                        })
+                });
+            }
         });
 
-    }, { scope: containerRef });
+    }, { scope: sectionRef });
 
     return (
-        <section ref={containerRef} id="projects" className="relative bg-tech-grid py-32 overflow-hidden">
-            <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
-                {/* Header outside the stack flow */}
-                <div className="mb-24 space-y-6 text-center">
-                    <h2 className="text-sm font-bold tracking-[0.2em] text-zinc-400 uppercase mb-4">Selected Works</h2>
-                    <h3 className="text-4xl md:text-6xl font-black text-zinc-900 tracking-tight">DIGITAL ARCHIVES</h3>
+        <section ref={sectionRef} id="projects" className="relative bg-tech-grid">
+            {/* Header - Centered gradient text style */}
+            <div
+                ref={headerRef}
+                className="sticky top-0 z-[100] bg-white/90 backdrop-blur-sm border-b border-zinc-200"
+            >
+                <div className="max-w-[1600px] mx-auto px-6 lg:px-12 pt-20 pb-6 text-center">
+                    <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-text-primary via-accent to-secondary opacity-20">
+                        Our Projects
+                    </h2>
                 </div>
             </div>
 
-            <div className="relative pb-24">
+            {/* Cards Container - Stacked scrolling */}
+            <div ref={cardsContainerRef} className="relative pb-[10vh]">
                 {PROJECTS.map((project, i) => (
                     <div
                         key={project.id}
-                        className={`project-card sticky top-0 h-screen w-full flex items-center justify-center p-4 lg:p-12 overflow-hidden`}
-                        style={{ zIndex: i + 1 }} // Ensure correct stacking order
+                        className="project-card sticky top-[120px] min-h-[80vh] w-full flex items-start justify-center px-4 lg:px-12 pt-8"
+                        style={{ zIndex: i + 1 }}
                     >
                         {/* Visual Card Container */}
-                        <div className={`relative w-full max-w-[1400px] h-[85vh] ${project.bgClass} rounded-[2rem] border border-black/5 shadow-2xl flex flex-col lg:flex-row overflow-hidden transform transition-transform`}>
+                        <div className={`card-content relative w-full max-w-[1400px] h-[75vh] ${project.bgClass} rounded-[2rem] border border-black/5 shadow-2xl flex flex-col lg:flex-row overflow-hidden`}>
 
                             {/* Left: Content */}
                             <div className="flex-1 p-8 lg:p-16 flex flex-col justify-center relative z-10">
@@ -125,8 +132,8 @@ export default function ProjectDisplaySection() {
                             {/* Right: Abstract Visual */}
                             <div className="flex-1 relative bg-gradient-to-br from-black/5 to-transparent flex items-center justify-center overflow-hidden">
                                 {/* Decorative Circles */}
-                                <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] aspect-square rounded-full border-[100px] border-white/20 opacity-50`} />
-                                <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] aspect-square rounded-full bg-gradient-to-tr from-white/40 to-transparent backdrop-blur-3xl`} />
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] aspect-square rounded-full border-[100px] border-white/20 opacity-50" />
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] aspect-square rounded-full bg-gradient-to-tr from-white/40 to-transparent backdrop-blur-3xl" />
 
                                 {/* Big Number */}
                                 <span className={`text-[12rem] lg:text-[20rem] font-black ${project.textClass} opacity-10 select-none`}>
@@ -144,6 +151,6 @@ export default function ProjectDisplaySection() {
                 ))}
             </div>
 
-        </section>
+        </section >
     );
 }

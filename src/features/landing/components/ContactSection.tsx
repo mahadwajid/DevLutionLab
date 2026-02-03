@@ -121,15 +121,6 @@ export default function ContactSection() {
 
                 </div>
 
-                {/* FOOTER BOTTOM */}
-                <div className="contact-reveal mt-32 pt-12 border-t border-zinc-100 flex flex-col md:flex-row items-center justify-between text-xs font-bold text-slate-400 tracking-widest uppercase gap-4">
-                    <span>© 2026 DevLution Lab. All Rights Reserved.</span>
-                    <div className="flex gap-8">
-                        <a href="#" className="hover:text-slate-900 transition-colors">Privacy Policy</a>
-                        <a href="#" className="hover:text-slate-900 transition-colors">Terms of Service</a>
-                    </div>
-                </div>
-
             </div>
         </section>
     );

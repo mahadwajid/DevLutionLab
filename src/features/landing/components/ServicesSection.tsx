@@ -49,39 +49,23 @@ export default function ServicesSection() {
     const cardsRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
-        const cards = gsap.utils.toArray(".service-card");
+        if (!cardsRef.current || !sectionRef.current) return;
 
-        // Horizontal Scroll Animation
-        gsap.to(cards, {
-            xPercent: -100 * (cards.length - 1),
+        const cards = gsap.utils.toArray(".service-card");
+        const totalWidth = cardsRef.current.scrollWidth - window.innerWidth;
+
+        // Horizontal Scroll Animation - animate the container
+        gsap.to(cardsRef.current, {
+            x: -totalWidth,
             ease: "none",
             scrollTrigger: {
                 trigger: sectionRef.current,
                 pin: true,
                 scrub: 1,
-                snap: 1 / (cards.length - 1),
                 start: "top top",
-                end: () => `+=${containerRef.current?.offsetWidth}`,
+                end: () => `+=${totalWidth}`,
+                invalidateOnRefresh: true,
             }
-        });
-
-        // Individual Card Floating / Reveal
-        cards.forEach((card: any) => {
-            gsap.fromTo(card.querySelector(".card-inner"),
-                { y: 50, opacity: 0, rotate: 2 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    rotate: 0,
-                    duration: 1,
-                    scrollTrigger: {
-                        trigger: card,
-                        containerAnimation: gsap.to(cards, { xPercent: -100 * (cards.length - 1) }), // Reference for horizontal trigger
-                        start: "left center+=100",
-                        toggleActions: "play none none reverse"
-                    }
-                }
-            );
         });
     }, { scope: sectionRef });
 
@@ -93,12 +77,14 @@ export default function ServicesSection() {
         >
             <div className="absolute inset-0 noise-overlay opacity-[0.05]" />
 
-            <div className="relative h-full flex flex-col justify-center">
-                {/* Title Layer */}
-                <div className="absolute top-20 left-12 lg:left-24 z-20">
-                    <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-text-primary via-accent to-secondary opacity-20">
-                        Our Services
-                    </h2>
+            <div className="relative h-full flex flex-col">
+                {/* Header - Centered gradient text style */}
+                <div className="bg-white/80 backdrop-blur-sm border-b border-zinc-200">
+                    <div className="max-w-[1600px] mx-auto px-6 lg:px-12 pt-20 pb-6 text-center">
+                        <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-text-primary via-accent to-secondary opacity-20">
+                            Our Services
+                        </h2>
+                    </div>
                 </div>
 
                 <div ref={containerRef} className="flex px-12 lg:px-24 h-[60vh]">
