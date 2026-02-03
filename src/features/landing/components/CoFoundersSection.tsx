@@ -114,7 +114,7 @@ export default function CoFoundersSection() {
     }, { dependencies: [activeIndex], scope: sectionRef });
 
     return (
-        <section ref={sectionRef} className="relative bg-zinc-50 bg-tech-grid h-screen">
+        <section ref={sectionRef} className="relative bg-zinc-50 bg-tech-grid h-screen z-10">
 
             {/* Header - Centered gradient text style */}
             <div className="bg-white border-b border-zinc-200">
@@ -130,9 +130,9 @@ export default function CoFoundersSection() {
                 {FOUNDERS.map((founder, i) => (
                     <div
                         key={founder.id}
-                        className="founder-panel absolute inset-0 flex items-center"
+                        className="founder-panel absolute inset-0 flex items-center px-6 lg:px-12"
                     >
-                        <div className="relative w-full h-[70vh] bg-white rounded-[2rem] overflow-hidden border border-black/5 shadow-2xl flex flex-col lg:flex-row">
+                        <div className="relative w-full h-[60vh] max-h-[600px] bg-white rounded-[2rem] overflow-hidden border border-black/5 shadow-2xl flex flex-col lg:flex-row">
 
                             {/* Left: Text Content */}
                             <div className="founder-content flex-1 p-12 lg:p-24 flex flex-col justify-center relative z-20 bg-white/50 backdrop-blur-md">

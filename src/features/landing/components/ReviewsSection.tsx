@@ -75,7 +75,7 @@ export default function ReviewsSection() {
     }, { scope: sectionRef });
 
     return (
-        <section ref={sectionRef} id="reviews" className="relative bg-white bg-tech-grid overflow-hidden">
+        <section ref={sectionRef} id="reviews" className="relative h-screen bg-white bg-tech-grid overflow-hidden z-0">
 
             {/* Header - Centered gradient text style */}
             <div className="bg-white border-b border-zinc-200">

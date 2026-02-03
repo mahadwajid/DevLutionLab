@@ -10,14 +10,12 @@ gsap.registerPlugin(ScrollTrigger);
 export default function FooterSection() {
     const sectionRef = useRef<HTMLElement>(null);
     const textRef = useRef<HTMLDivElement>(null);
-    const lastCharsRef = useRef<HTMLSpanElement>(null);
     const accentDotRef = useRef<HTMLDivElement>(null);
     const decorRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
         const section = sectionRef.current;
         const text = textRef.current;
-        const lastChars = lastCharsRef.current;
         const accentDot = accentDotRef.current;
         const decor = decorRef.current;
 
@@ -38,23 +36,6 @@ export default function FooterSection() {
                 }
             }
         );
-
-        // Last two characters: move slightly faster for parallax depth
-        if (lastChars) {
-            gsap.fromTo(lastChars,
-                { y: "0" },
-                {
-                    y: "-12px",
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: section,
-                        start: "top bottom",
-                        end: "bottom bottom",
-                        scrub: true
-                    }
-                }
-            );
-        }
 
         // Accent dot: slightly different scroll speed for micro-parallax
         if (accentDot) {
@@ -115,13 +96,6 @@ export default function FooterSection() {
                     <h2 className="text-[22vw] md:text-[18vw] lg:text-[16vw] font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-text-primary via-accent to-secondary opacity-20 leading-none">
                         DevLution
                     </h2>
-                    {/* Overlapping 'on' that moves slightly for parallax */}
-                    <span
-                        ref={lastCharsRef}
-                        className="absolute right-0 top-0 text-[22vw] md:text-[18vw] lg:text-[16vw] font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary opacity-20 leading-none"
-                    >
-                        on
-                    </span>
                 </div>
 
                 {/* Accent dot - micro-parallax element */}
