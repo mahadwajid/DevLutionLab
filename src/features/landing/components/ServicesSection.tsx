@@ -11,35 +11,51 @@ gsap.registerPlugin(ScrollTrigger);
 const SERVICES = [
     {
         id: "01",
-        title: "Product Design",
-        desc: "We craft high-end technical blueprints and prototypes that bridge the gap between concept and reality.",
-        image: "/assets/services/service_design.png",
-        color: "from-blue-500/20 to-cyan-500/20",
-        tags: ["UI/UX", "PROTOTYPING", "BLUEPRINTS"]
+        title: "AI Solutions",
+        desc: "We design and deploy intelligent AI systems that automate workflows, enhance decision-making, and unlock data-driven growth.",
+        image: "/assets/services/service_ai.png",
+        color: "from-pink-500/20 to-purple-500/20",
+        tags: ["MACHINE LEARNING", "AUTOMATION", "DATA INTELLIGENCE"]
     },
     {
         id: "02",
-        title: "AI & Intelligence",
-        desc: "Integrating sophisticated neural networks and AI cores to automate complexity and drive efficiency.",
-        image: "/assets/services/service_ai.png",
-        color: "from-pink-500/20 to-purple-500/20",
-        tags: ["NEURAL CORES", "AUTOMATION", "DATA"]
+        title: "Web Development",
+        desc: "High-performance, secure web applications engineered with modern technologies for scalability and long-term reliability.",
+        image: "/assets/services/service_web.png",
+        color: "from-cyan-500/20 to-blue-500/20",
+        tags: ["NEXT.JS", "API", "SECURE APPS"]
     },
     {
         id: "03",
-        title: "Scalable Systems",
-        desc: "Robust cloud infrastructure designed for global reach, performance, and future-proof resilience.",
-        image: "/assets/services/service_cloud.png",
-        color: "from-purple-500/20 to-indigo-500/20",
-        tags: ["CLOUD", "DEVOPS", "SCALING"]
+        title: "Mobile Applications",
+        desc: "User-centric mobile apps built for iOS and Android with seamless performance and scalable backend integration.",
+        image: "/assets/services/service_mob.jpeg",
+        color: "from-blue-500/20 to-indigo-500/20",
+        tags: ["IOS", "ANDROID", "CROSS-PLATFORM"]
     },
     {
         id: "04",
-        title: "Premium Interfaces",
-        desc: "Pixel-perfect web applications built with modern stacks for the most demanding digital ecosystems.",
+        title: "SaaS Platforms",
+        desc: "End-to-end SaaS product development from architecture to deployment, optimized for scalability and business growth.",
+        image: "/assets/services/service_design.png",
+        color: "from-purple-500/20 to-fuchsia-500/20",
+        tags: ["MULTI-TENANT", "SUBSCRIPTIONS", "SCALABLE"]
+    },
+    {
+        id: "05",
+        title: "Process Automation",
+        desc: "Streamlining business operations through intelligent automation, system integrations, and workflow optimization.",
         image: "/assets/services/service_interface.png",
-        color: "from-cyan-500/20 to-blue-500/20",
-        tags: ["NEXT.JS", "REACTIVE UI", "PERFORMANCE"]
+        color: "from-green-500/20 to-emerald-500/20",
+        tags: ["WORKFLOWS", "INTEGRATION", "EFFICIENCY"]
+    },
+    {
+        id: "06",
+        title: "Cloud & DevOps",
+        desc: "Secure, scalable cloud infrastructure and DevOps pipelines ensuring high availability, performance, and continuous delivery.",
+        image: "/assets/services/service_cloud.png",
+        color: "from-indigo-500/20 to-sky-500/20",
+        tags: ["AWS", "CI/CD", "INFRASTRUCTURE"]
     }
 ];
 

@@ -62,13 +62,7 @@ export default function ContactSection() {
                             </div>
                         </div>
 
-                        <div className="contact-reveal flex gap-6 pt-12">
-                            {["TWITTER", "LINKEDIN", "INSTAGRAM", "GITHUB"].map(social => (
-                                <a key={social} href="#" className="text-xs font-bold text-slate-400 hover:text-slate-900 transition-colors tracking-widest uppercase">
-                                    {social}
-                                </a>
-                            ))}
-                        </div>
+                        
                     </div>
 
                     {/* RIGHT: FORM */}

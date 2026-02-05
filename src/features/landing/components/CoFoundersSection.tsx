@@ -10,29 +10,30 @@ gsap.registerPlugin(ScrollTrigger);
 const FOUNDERS = [
     {
         id: 1,
-        name: "ALEXANDER VANE",
-        role: "CHIEF ARCHITECT",
-        bio: "Building digital cathedrals from raw logic. Alex oversees the technical vision, ensuring every line of code serves a higher purpose of scalability and resilience.",
-        imageColor: "bg-slate-200",
-        accent: "text-slate-900"
-    },
-    {
-        id: 2,
-        name: "ELARA VOSS",
-        role: "HEAD OF STRATEGY",
-        bio: "Bridging the gap between abstract innovation and market reality. Elara turns chaotic creativity into structured, shippable products that define markets.",
-        imageColor: "bg-zinc-200",
+        name: "ABDUL AZIZ",
+        role: "CO-FOUNDER & OPERATIONS LEAD",
+        bio: "Overseeing execution, delivery, and process optimization. Abdul ensures projects move seamlessly from concept to deployment while maintaining quality and reliability.",
+        image: "/assets/founders/abdul-aziz.jpg",
         accent: "text-zinc-900"
     },
     {
-        id: 3,
-        name: "JULIAN KAIN",
-        role: "CREATIVE DIRECTOR",
-        bio: "Pixel perfectionist and interaction designer. Julian believes that software should feel organic, intuitive, and alive, pushing the boundaries of UI physics.",
-        imageColor: "bg-stone-200",
+        id: 2,
+        name: "MAHAD WAJID",
+        role: "CO-FOUNDER & TECH LEAD",
+        bio: "Shaping business strategy and client partnerships. Mahad bridges technology and business goals, translating vision into scalable, market-ready solutions.",
+        image: "/assets/team/mahad.jpeg",
         accent: "text-stone-900"
-    }
+    },
+    {
+        id: 3,
+        name: "SAUD KHAN",
+        role: "CO-FOUNDER & STRATEGY LEAD",
+        bio: "Driving the technical vision of DevLutionLab. Saud architects scalable systems, leads engineering excellence, and ensures every solution is secure, efficient, and future-ready.",
+        image: "/assets/team/saud.jpeg",
+        accent: "text-slate-900"
+    },
 ];
+
 
 export default function CoFoundersSection() {
     const sectionRef = useRef<HTMLElement>(null);
@@ -150,14 +151,18 @@ export default function CoFoundersSection() {
 
                             {/* Right: Image Content */}
                             <div className="founder-image flex-1 relative overflow-hidden bg-zinc-100">
-                                <div className={`w-full h-full ${founder.imageColor} relative flex items-center justify-center`}>
-                                    {/* Mockup Figure */}
-                                    <div className="w-[60%] h-[70%] bg-zinc-300 rounded-full blur-3xl opacity-20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse" />
-                                    <span className="text-[12rem] font-black text-black/5 select-none">{founder.name[0]}</span>
+                              <div className="founder-image flex-1 relative overflow-hidden bg-zinc-100">
+    <img
+        src={founder.image}
+        alt={founder.name}
+        className="w-full h-full object-cover object-center scale-[1.05]"
+        draggable={false}
+    />
 
-                                    {/* Abstract Portrait Placeholder */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/10 to-transparent" />
-                                </div>
+    {/* Premium gradient overlay */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent" />
+</div>
+
                             </div>
 
                         </div>

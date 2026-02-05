@@ -10,40 +10,26 @@ gsap.registerPlugin(ScrollTrigger);
 const REVIEWS = [
     {
         id: 1,
-        name: "SARAH JENKINS",
-        role: "CTO, FINTECH GLOBAL",
-        quote: "DevLution Lab didn't just build our platform; they re-engineered our entire approach to high-frequency data handling. The speed improvement is simply impossible to ignore.",
-        company: "FINTECH"
+        name: "ZAHEER HOSANY",
+        role: "COO, PALMIS GLOBAL",
+        quote: "DevLutionLab played a critical role in modernizing our digital infrastructure. Their technical depth, reliability, and ability to understand business needs made them a true long-term partner.",
+        company: "PALMIS GLOBAL"
+    },
+     {
+        id: 2,
+        name: "WISAL KHAN",
+        role: "CEO, FIRNAS.TECH",
+        quote: "DevLutionLab delivered exactly what we needed — a scalable, well-architected solution built with precision. Their team understands both technology and business execution.",
+        company: "FIRNAS.TECH"
     },
     {
         id: 2,
-        name: "MICHAEL CHEN",
-        role: "FOUNDER, AETHER",
-        quote: "We needed a partner who understood luxury aesthetics as deeply as they understood serverless architecture. They delivered a masterpiece that feels alive.",
-        company: "AETHER"
+        name: "VICTOR ",
+        role: "FOUNDER, Dr Schavit Store (US)",
+        quote: "Working with DevLutionLab felt like extending our internal engineering team. Clean architecture, clear communication, and on-time delivery every single time.",
+        company: "E-commerce Dr Schavit"
     },
-    {
-        id: 3,
-        name: "ELENA ROSSI",
-        role: "VP PRODUCT, LUMINA",
-        quote: "Healthcare software is usually clunky and ugly. They proved it can be beautiful, secure, and incredibly fast. Patients actually love using our app now.",
-        company: "LUMINA"
-    },
-    {
-        id: 4,
-        name: "DAVID OKONJO",
-        role: "CEO, ORBITAL",
-        quote: "The level of engineering rigor they apply is rare. It's not just about code that works; it's about code that scales effortlessly as we grow 10x year over year.",
-        company: "ORBITAL"
-    },
-    {
-        id: 5,
-        name: "JESSICA LEE",
-        role: "DIRECTOR, VELOCITY",
-        quote: "Professional, transparent, and incredibly talented. They assimilated into our team structure immediately and drove the project to launch ahead of schedule.",
-        company: "VELOCITY"
-    }
-];
+]
 
 export default function ReviewsSection() {
     const sectionRef = useRef<HTMLElement>(null);
