@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://devlutionlab.tech/sitemap.xml',
+        sitemap: 'https://www.devlutionlab.tech/sitemap.xml',
     }
 }

@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
     return [
         {
-            url: 'https://devlutionlab.tech',
+            url: 'https://www.devlutionlab.tech',
             lastModified: new Date(),
             changeFrequency: 'yearly',
             priority: 1,
