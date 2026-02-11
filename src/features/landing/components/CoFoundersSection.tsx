@@ -13,7 +13,7 @@ const FOUNDERS = [
         name: "ABDUL AZIZ",
         role: "CO-FOUNDER & OPERATIONS LEAD",
         bio: "Overseeing execution, delivery, and process optimization. Abdul ensures projects move seamlessly from concept to deployment while maintaining quality and reliability.",
-        image: "/assets/team/Abdulaziz.jpeg",
+        image: "/assets/team/AI-Abdulaziz.png",
         accent: "text-zinc-900"
     },
     {
@@ -21,7 +21,7 @@ const FOUNDERS = [
         name: "MAHAD WAJID",
         role: "CO-FOUNDER & TECH LEAD",
         bio: "Shaping business strategy and client partnerships. Mahad bridges technology and business goals, translating vision into scalable, market-ready solutions.",
-        image: "/assets/team/mahad.jpeg",
+        image: "/assets/team/AI-Mahad.png",
         accent: "text-stone-900"
     },
     {
