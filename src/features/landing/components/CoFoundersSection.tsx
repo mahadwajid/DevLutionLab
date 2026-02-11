@@ -13,7 +13,7 @@ const FOUNDERS = [
         name: "ABDUL AZIZ",
         role: "CO-FOUNDER & OPERATIONS LEAD",
         bio: "Overseeing execution, delivery, and process optimization. Abdul ensures projects move seamlessly from concept to deployment while maintaining quality and reliability.",
-        image: "/assets/team/AI-Abdulaziz.png",
+        image: "/assets/team/AI-AbdulAziz.png",
         accent: "text-zinc-900"
     },
     {
