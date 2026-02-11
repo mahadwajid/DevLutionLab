@@ -53,7 +53,7 @@ const SERVICES = [
         id: "06",
         title: "Cloud & DevOps",
         desc: "Secure, scalable cloud infrastructure and DevOps pipelines ensuring high availability, performance, and continuous delivery.",
-        image: "/assets/services/Cloud infrastructure.png",
+        image: "/assets/services/Cloud Infrastructure.png",
         color: "from-indigo-500/20 to-sky-500/20",
         tags: ["AWS", "CI/CD", "INFRASTRUCTURE"]
     }
