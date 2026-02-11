@@ -5,6 +5,17 @@ import localFont from "next/font/local";
 export const metadata: Metadata = {
   title: "devLution Lab - Tech Portfolio",
   description: "Empowering Businesses with high Intelligence!",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 const plusJakartaSans = localFont({
