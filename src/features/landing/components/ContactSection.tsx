@@ -62,25 +62,38 @@ export default function ContactSection() {
                             </div>
                         </div>
 
-                        
+
                     </div>
 
                     {/* RIGHT: FORM */}
                     <div className="flex-1">
-                        <form className="contact-reveal space-y-8 bg-zinc-50 p-8 md:p-12 rounded-[2rem] border border-zinc-100 shadow-xl shadow-zinc-200/50">
+                        <form
+                            action="https://formspree.io/f/xeelezlr"
+                            method="POST"
+                            className="contact-reveal space-y-8 bg-zinc-50 p-8 md:p-12 rounded-[2rem] border border-zinc-100 shadow-xl shadow-zinc-200/50"
+                        >
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Name</label>
+                                    <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">
+                                        Name
+                                    </label>
                                     <input
                                         type="text"
+                                        name="name"
+                                        required
                                         className="w-full bg-transparent border-b border-zinc-200 py-4 text-lg font-medium text-slate-900 focus:border-blue-600 focus:outline-none transition-colors placeholder:text-zinc-300"
                                         placeholder="John Doe"
                                     />
                                 </div>
+
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Email</label>
+                                    <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">
+                                        Email
+                                    </label>
                                     <input
                                         type="email"
+                                        name="email"
+                                        required
                                         className="w-full bg-transparent border-b border-zinc-200 py-4 text-lg font-medium text-slate-900 focus:border-blue-600 focus:outline-none transition-colors placeholder:text-zinc-300"
                                         placeholder="john@company.com"
                                     />
@@ -88,29 +101,43 @@ export default function ContactSection() {
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Company</label>
+                                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">
+                                    Company
+                                </label>
                                 <input
                                     type="text"
+                                    name="company"
                                     className="w-full bg-transparent border-b border-zinc-200 py-4 text-lg font-medium text-slate-900 focus:border-blue-600 focus:outline-none transition-colors placeholder:text-zinc-300"
                                     placeholder="Acme Corp"
                                 />
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Message</label>
+                                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">
+                                    Message
+                                </label>
                                 <textarea
                                     rows={4}
+                                    name="message"
+                                    required
                                     className="w-full bg-transparent border-b border-zinc-200 py-4 text-lg font-medium text-slate-900 focus:border-blue-600 focus:outline-none transition-colors placeholder:text-zinc-300 resize-none"
                                     placeholder="Tell us about your project..."
                                 />
                             </div>
 
+                            {/* Optional Formspree subject */}
+                            <input type="hidden" name="_subject" value="New Portfolio Contact Message" />
+
                             <div className="pt-8">
-                                <button type="button" className="group w-full bg-slate-900 text-white py-6 rounded-xl font-black text-sm uppercase tracking-widest hover:bg-blue-600 transition-all duration-300">
+                                <button
+                                    type="submit"
+                                    className="group w-full bg-slate-900 text-white py-6 rounded-xl font-black text-sm uppercase tracking-widest hover:bg-blue-600 transition-all duration-300"
+                                >
                                     Send Message
                                 </button>
                             </div>
                         </form>
+
                     </div>
 
                 </div>

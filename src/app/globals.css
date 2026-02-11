@@ -148,7 +148,15 @@ body {
 }
 
 @keyframes fillUp {
-  0% { height: 0%; }
-  50% { height: 100%; }
-  100% { height: 0%; }
+  0% {
+    height: 0%;
+  }
+
+  50% {
+    height: 100%;
+  }
+
+  100% {
+    height: 0%;
+  }
 }

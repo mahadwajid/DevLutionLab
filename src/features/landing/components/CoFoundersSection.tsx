@@ -13,7 +13,7 @@ const FOUNDERS = [
         name: "ABDUL AZIZ",
         role: "CO-FOUNDER & OPERATIONS LEAD",
         bio: "Overseeing execution, delivery, and process optimization. Abdul ensures projects move seamlessly from concept to deployment while maintaining quality and reliability.",
-        image: "/assets/founders/abdul-aziz.jpg",
+        image: "/assets/team/Abdulaziz.jpeg",
         accent: "text-zinc-900"
     },
     {
@@ -30,6 +30,14 @@ const FOUNDERS = [
         role: "CO-FOUNDER & STRATEGY LEAD",
         bio: "Driving the technical vision of DevLutionLab. Saud architects scalable systems, leads engineering excellence, and ensures every solution is secure, efficient, and future-ready.",
         image: "/assets/team/saud.jpeg",
+        accent: "text-slate-900"
+    },
+    {
+        id: 4,
+        name: "BILAL KHATTAK",
+        role: "BUSNIESS DEVELOPMENT LEAD",
+        bio: "Leading growth strategy and client partnerships at DevLutionLab. Bilal focuses on building strong relationships, identifying new opportunities, and expanding the company’s global presence through strategic collaboration and market development.",
+        image: "/assets/team/Bilal.png",
         accent: "text-slate-900"
     },
 ];
@@ -151,17 +159,17 @@ export default function CoFoundersSection() {
 
                             {/* Right: Image Content */}
                             <div className="founder-image flex-1 relative overflow-hidden bg-zinc-100">
-                              <div className="founder-image flex-1 relative overflow-hidden bg-zinc-100">
-    <img
-        src={founder.image}
-        alt={founder.name}
-        className="w-full h-full object-cover object-center scale-[1.05]"
-        draggable={false}
-    />
+                                <div className="founder-image flex-1 relative overflow-hidden bg-zinc-100">
+                                    <img
+                                        src={founder.image}
+                                        alt={founder.name}
+                                        className="w-full h-full object-cover object-center scale-[1.05]"
+                                        draggable={false}
+                                    />
 
-    {/* Premium gradient overlay */}
-    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent" />
-</div>
+                                    {/* Premium gradient overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent" />
+                                </div>
 
                             </div>
 

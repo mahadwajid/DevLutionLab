@@ -13,7 +13,7 @@ const SERVICES = [
         id: "01",
         title: "AI Solutions",
         desc: "We design and deploy intelligent AI systems that automate workflows, enhance decision-making, and unlock data-driven growth.",
-        image: "/assets/services/service_ai.png",
+        image: "/assets/services/AI.png",
         color: "from-pink-500/20 to-purple-500/20",
         tags: ["MACHINE LEARNING", "AUTOMATION", "DATA INTELLIGENCE"]
     },
@@ -21,7 +21,7 @@ const SERVICES = [
         id: "02",
         title: "Web Development",
         desc: "High-performance, secure web applications engineered with modern technologies for scalability and long-term reliability.",
-        image: "/assets/services/service_web.png",
+        image: "/assets/services/Web.png",
         color: "from-cyan-500/20 to-blue-500/20",
         tags: ["NEXT.JS", "API", "SECURE APPS"]
     },
@@ -29,7 +29,7 @@ const SERVICES = [
         id: "03",
         title: "Mobile Applications",
         desc: "User-centric mobile apps built for iOS and Android with seamless performance and scalable backend integration.",
-        image: "/assets/services/service_mob.jpeg",
+        image: "/assets/services/Mobile.png",
         color: "from-blue-500/20 to-indigo-500/20",
         tags: ["IOS", "ANDROID", "CROSS-PLATFORM"]
     },
@@ -37,7 +37,7 @@ const SERVICES = [
         id: "04",
         title: "SaaS Platforms",
         desc: "End-to-end SaaS product development from architecture to deployment, optimized for scalability and business growth.",
-        image: "/assets/services/service_design.png",
+        image: "/assets/services/SaaS.png",
         color: "from-purple-500/20 to-fuchsia-500/20",
         tags: ["MULTI-TENANT", "SUBSCRIPTIONS", "SCALABLE"]
     },
@@ -45,7 +45,7 @@ const SERVICES = [
         id: "05",
         title: "Process Automation",
         desc: "Streamlining business operations through intelligent automation, system integrations, and workflow optimization.",
-        image: "/assets/services/service_interface.png",
+        image: "/assets/services/BS automation.png",
         color: "from-green-500/20 to-emerald-500/20",
         tags: ["WORKFLOWS", "INTEGRATION", "EFFICIENCY"]
     },
@@ -53,7 +53,7 @@ const SERVICES = [
         id: "06",
         title: "Cloud & DevOps",
         desc: "Secure, scalable cloud infrastructure and DevOps pipelines ensuring high availability, performance, and continuous delivery.",
-        image: "/assets/services/service_cloud.png",
+        image: "/assets/services/Cloud infrastructure.png",
         color: "from-indigo-500/20 to-sky-500/20",
         tags: ["AWS", "CI/CD", "INFRASTRUCTURE"]
     }
