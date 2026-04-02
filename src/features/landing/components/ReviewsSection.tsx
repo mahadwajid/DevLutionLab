@@ -1,110 +1,70 @@
-"use client";
-
-import React, { useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger);
+import React from 'react';
 
 const REVIEWS = [
     {
         id: 1,
-        name: "ZAHEER HOSANY",
-        role: "COO, PALMIS GLOBAL",
-        quote: "DevLutionLab played a critical role in modernizing our digital infrastructure. Their technical depth, reliability, and ability to understand business needs made them a true long-term partner.",
-        company: "PALMIS GLOBAL"
-    },
-     {
-        id: 2,
-        name: "WISAL KHAN",
-        role: "CEO, FIRNAS.TECH",
-        quote: "DevLutionLab delivered exactly what we needed — a scalable, well-architected solution built with precision. Their team understands both technology and business execution.",
-        company: "FIRNAS.TECH"
+        name: 'Zaheer Hosany',
+        role: 'COO, Palmis Global',
+        company: 'Palmis Global',
+        quote: 'DevLutionLab played a critical role in modernizing our digital infrastructure. Their technical depth, reliability, and ability to understand business needs made them a true long-term partner.',
     },
     {
         id: 2,
-        name: "VICTOR ",
-        role: "FOUNDER, Dr Schavit Store (US)",
-        quote: "Working with DevLutionLab felt like extending our internal engineering team. Clean architecture, clear communication, and on-time delivery every single time.",
-        company: "E-commerce Dr Schavit"
+        name: 'Wisal Khan',
+        role: 'CEO, Firnas.Tech',
+        company: 'Firnas.Tech',
+        quote: 'DevLutionLab delivered exactly what we needed — a scalable, well-architected solution built with precision. Their team understands both technology and business execution.',
     },
-]
+    {
+        id: 3,
+        name: 'Victor',
+        role: 'Founder, Dr Schavit Store (US)',
+        company: 'Dr Schavit E-commerce',
+        quote: 'Working with DevLutionLab felt like extending our internal engineering team. Clean architecture, clear communication, and on-time delivery every single time.',
+    },
+];
 
 export default function ReviewsSection() {
-    const sectionRef = useRef<HTMLElement>(null);
-    const trackRef = useRef<HTMLDivElement>(null);
-
-    useGSAP(() => {
-        const track = trackRef.current;
-        if (!track) return;
-
-        // Calculate how far to scroll (total width minus viewport width)
-        const totalWidth = track.scrollWidth;
-        const viewportWidth = window.innerWidth;
-        const scrollDistance = totalWidth - viewportWidth;
-
-        // Create scroll-triggered horizontal animation
-        gsap.to(track, {
-            x: -scrollDistance,
-            ease: "none",
-            scrollTrigger: {
-                trigger: sectionRef.current,
-                start: "top top",
-                end: () => `+=${scrollDistance}`,
-                pin: true,
-                scrub: 1,
-                anticipatePin: 1
-            }
-        });
-
-    }, { scope: sectionRef });
-
     return (
-        <section ref={sectionRef} id="reviews" className="relative h-screen bg-white bg-tech-grid overflow-hidden z-0">
+        <section id="reviews" className="py-12 bg-white bg-tech-grid">
+            <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
 
-            {/* Header - Centered gradient text style */}
-            <div className="bg-white border-b border-zinc-200">
-                <div className="max-w-[1600px] mx-auto px-6 lg:px-12 pt-20 pb-6 text-center">
-                    <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-text-primary via-accent to-secondary opacity-20">
+                {/* Header */}
+                <div className="text-center mb-8">
+                    <span className="text-xs font-bold text-secondary uppercase tracking-widest">Client Stories</span>
+                    <h2 className="mt-3 text-4xl md:text-5xl font-black tracking-tight text-text-primary">
                         Testimonials
                     </h2>
+                    <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-secondary" />
                 </div>
-            </div>
 
-            {/* Reviews Track - Horizontal scroll on vertical scroll */}
-            <div className="relative h-[calc(100vh-140px)] flex items-center">
-                {/* Gradient Masks */}
-                <div className="absolute left-0 top-0 bottom-0 w-24 lg:w-48 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-                <div className="absolute right-0 top-0 bottom-0 w-24 lg:w-48 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-
-                {/* Track */}
-                <div ref={trackRef} className="flex gap-8 pl-12 lg:pl-24 pr-[50vw]">
+                {/* Reviews Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {REVIEWS.map((review) => (
                         <div
                             key={review.id}
-                            className="w-[350px] md:w-[450px] bg-white p-10 rounded-2xl shadow-xl shadow-zinc-200/50 flex flex-col justify-between shrink-0 group hover:-translate-y-2 transition-transform duration-300 border border-zinc-100"
+                            className="group flex flex-col bg-white p-8 rounded-2xl border border-border shadow-sm hover:shadow-md hover:border-secondary/20 transition-all duration-200"
                         >
-                            <div className="space-y-6">
-                                <div className="text-blue-600 opacity-30">
-                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" />
-                                    </svg>
-                                </div>
-                                <p className="text-lg font-medium text-zinc-600 leading-relaxed">
-                                    "{review.quote}"
-                                </p>
+                            {/* Quote icon */}
+                            <div className="text-secondary/20 mb-4">
+                                <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M14.017 21v-3c0-1.105.896-2 2-2h3c.552 0 1-.448 1-1V9c0-.552-.448-1-1-1h-4c-.552 0-1 .448-1 1v2c0 .552-.448 1-1 1h-1V5h10v10c0 3.314-2.686 6-6 6h-2zm-11 0v-3c0-1.105.896-2 2-2h3c.552 0 1-.448 1-1V9c0-.552-.448-1-1-1H4c-.552 0-1 .448-1 1v2c0 .552-.448 1-1 1H1V5h10v10c0 3.314-2.686 6-6 6H3z" />
+                                </svg>
                             </div>
 
-                            <div className="pt-8 border-t border-zinc-100 mt-auto">
-                                <h4 className="font-bold text-zinc-900 tracking-tight">{review.name}</h4>
-                                <span className="text-xs font-bold text-zinc-400 tracking-widest uppercase">{review.role}</span>
+                            <p className="text-zinc-600 leading-relaxed text-sm flex-1 mb-6">
+                                "{review.quote}"
+                            </p>
+
+                            <div className="pt-6 border-t border-zinc-100">
+                                <div className="font-bold text-zinc-900">{review.name}</div>
+                                <div className="text-xs font-bold text-text-muted uppercase tracking-widest mt-0.5">{review.role}</div>
                             </div>
                         </div>
                     ))}
                 </div>
-            </div>
 
+            </div>
         </section>
     );
 }
