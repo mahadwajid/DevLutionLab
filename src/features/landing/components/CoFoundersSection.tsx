@@ -33,7 +33,7 @@ const FOUNDERS = [
 
 export default function CoFoundersSection() {
     return (
-        <section className="py-16 bg-white bg-tech-grid">
+        <section className="py-16 bg-white ">
             <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
 
                 {/* Header */}

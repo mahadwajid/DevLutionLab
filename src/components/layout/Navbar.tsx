@@ -27,7 +27,7 @@ export default function Navbar() {
                         <span className="text-white font-bold text-lg">D</span>
                     </div>
                     <span className="text-xl font-bold text-text-primary tracking-tight">
-                        devLution <span className="text-secondary">Lab</span>
+                        DevLution <span className="text-secondary">Lab</span>
                     </span>
                 </Link>
 

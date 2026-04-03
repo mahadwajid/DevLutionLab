@@ -8,14 +8,19 @@
 
 @theme {
   /* Mandatory Theme Palette - LIGHT MODE */
-  --color-primary: #0F172A;
-  --color-secondary: #3B82F6;
+  --color-primary: #1B315D; 
+  --color-secondary: #153f94;
   --color-accent: #F59E0B;
   --color-background: #F8FAFC;
   --color-surface: #FFFFFF;
   --color-border: #E2E8F0;
   --color-text-primary: #0F172A;
   --color-text-muted: #64748B;
+
+  --color-hero-gradient-from: #0B1E3A;  /* deep navy */
+  --color-hero-gradient-via: #1E3A8A;   /* rich blue */
+  --color-hero-gradient-to: #2563EB;    /* brighter blue */
+
 
   /* Typography */
   --font-sans: var(--font-plus-jakarta), system-ui, sans-serif;

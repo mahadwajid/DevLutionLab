@@ -66,7 +66,7 @@ const COMPANY_MODULES = [
 
 export default function AboutSection() {
     return (
-        <section id="about" className="py-12 bg-white bg-tech-grid">
+        <section id="about" className="py-12 bg-white ">
             <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
 
                 {/* Header */}

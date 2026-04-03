@@ -41,11 +41,20 @@ const PROJECTS = [
         accent: 'bg-orange-500',
         image: '/images/DA4.png',
     },
+       {
+        id: 5,
+        title: 'RUSHFUNDED - TRADING PLATFORM',
+        category: 'TRADING CRYPTO WEB 3.0',
+        description: 'Complete Product Design, UI / UX',
+        tags: ['FIGMA', 'DESIGN'],
+        accent: 'bg-orange-500',
+        image: '/images/DA5.jpg',
+    },
 ];
 
 export default function ProjectDisplaySection() {
     return (
-        <section id="projects" className="py-12 bg-white bg-tech-grid">
+        <section id="projects" className="py-12 bg-white ">
             <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
 
                 {/* Header */}

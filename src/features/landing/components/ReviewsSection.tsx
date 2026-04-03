@@ -26,7 +26,7 @@ const REVIEWS = [
 
 export default function ReviewsSection() {
     return (
-        <section id="reviews" className="py-12 bg-white bg-tech-grid">
+        <section id="reviews" className="py-12 bg-white ">
             <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
 
                 {/* Header */}

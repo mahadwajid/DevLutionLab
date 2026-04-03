@@ -11,11 +11,9 @@ export default function FooterSection() {
                     {/* Brand */}
                     <div className="space-y-4 max-w-xs" data-aos="fade-right" data-aos-delay="100">
                         <div className="flex items-center gap-2">
-                            <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center shadow-lg shadow-secondary/30">
-                                <span className="text-white font-bold text-lg">D</span>
-                            </div>
+                           
                             <span className="text-xl font-bold tracking-tight">
-                                devLution <span className="text-secondary">Lab</span>
+                                DevLution Lab
                             </span>
                         </div>
                         <p className="text-sm text-white/60 leading-relaxed">
