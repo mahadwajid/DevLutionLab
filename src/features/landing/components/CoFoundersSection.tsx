@@ -25,7 +25,7 @@ const FOUNDERS = [
         name: 'Saud Khan',
         role: 'Co-Founder & Strategy Lead',
         bio: 'Architecting systems and leading innovation for future-ready products.',
-        image: '/assets/team/saud.jpeg',
+        image: '/assets/team/Saud-AI.png',
         linkedin: 'https://www.linkedin.com/in/saud-khan-dev/',
         instagram: '#',
     },
