@@ -49,7 +49,7 @@ export default function ProjectDisplaySection() {
             <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
 
                 {/* Header */}
-                <div className="text-center mb-8">
+                <div className="text-center mb-8" data-aos="fade-up">
                     <span className="text-xs font-bold text-secondary uppercase tracking-widest">Portfolio</span>
                     <h2 className="mt-3 text-4xl md:text-5xl font-black tracking-tight text-text-primary">
                         Our Projects
@@ -62,6 +62,8 @@ export default function ProjectDisplaySection() {
                     {PROJECTS.map((project, i) => (
                         <div
                             key={project.id}
+                            data-aos={i % 2 === 0 ? 'fade-right' : 'fade-left'}
+                            data-aos-delay="100"
                             className={`group flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-0 bg-zinc-50 rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 lg:min-h-[400px]`}
                         >
                             {/* Image */}

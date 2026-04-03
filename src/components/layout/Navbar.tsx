@@ -46,8 +46,8 @@ export default function Navbar() {
                 </ul>
 
                 {/* Right: Social + CTA */}
-                <div className="flex items-center gap-4">
-                    {/* Social icons — desktop only */}
+                {/* <div className="flex items-center gap-4">
+                  
                     <div className="hidden xl:flex items-center gap-3 text-text-muted">
                         {[
                             { name: 'linkedin', href: 'https://www.linkedin.com/company/devlutionlab/' },
@@ -78,7 +78,7 @@ export default function Navbar() {
                         Start a project
                     </Link>
 
-                    {/* Mobile hamburger */}
+                  
                     <button
                         className="lg:hidden p-2 text-text-primary hover:text-secondary transition-colors"
                         aria-label="Toggle Menu"
@@ -94,7 +94,7 @@ export default function Navbar() {
                             </svg>
                         )}
                     </button>
-                </div>
+                </div> */}
             </nav>
 
             {/* Mobile menu dropdown */}

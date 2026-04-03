@@ -52,6 +52,16 @@ const COMPANY_MODULES = [
             </svg>
         ),
     },
+    {
+        id: '06',
+        title: 'Product Engineering',
+        description: 'We build end-to-end digital products from intuitive user interfaces to powerful backend systems ensuring seamless, scalable, and future-ready solutions.',
+        icon: (
+            <svg className="w-6 h-6 text-secondary fill-none stroke-current" viewBox="0 0 24 24" strokeWidth={1.8}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M14.25 6.087c0-.875-.355-1.668-.928-2.243A3.375 3.375 0 0011.087 3h-2.174a3.375 3.375 0 00-2.243.844A3.375 3.375 0 006 6.087V9h12V6.087zM6 9v8.25A2.25 2.25 0 008.25 19.5h7.5A2.25 2.25 0 0018 17.25V9M9 13.5h6" />
+            </svg>
+        ),
+    },
 ];
 
 export default function AboutSection() {
@@ -60,7 +70,7 @@ export default function AboutSection() {
             <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
 
                 {/* Header */}
-                <div className="text-center mb-8">
+                <div className="text-center mb-8" data-aos="fade-up">
                     <span className="text-xs font-bold text-secondary uppercase tracking-widest">What We Do</span>
                     <h2 className="mt-3 text-4xl md:text-5xl font-black tracking-tight text-text-primary">
                         Built on Solid Principles
@@ -70,9 +80,11 @@ export default function AboutSection() {
 
                 {/* Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {COMPANY_MODULES.map((mod) => (
+                    {COMPANY_MODULES.map((mod, i) => (
                         <div
                             key={mod.id}
+                            data-aos="fade-up"
+                            data-aos-delay={i * 80}
                             className="group p-8 bg-white rounded-2xl border border-border shadow-sm hover:shadow-md hover:border-secondary/30 transition-all duration-200"
                         >
                             <div className="flex items-center gap-3 mb-4">
@@ -87,7 +99,11 @@ export default function AboutSection() {
                     ))}
 
                     {/* Wide tagline card */}
-                    <div className="md:col-span-2 lg:col-span-3 p-8 rounded-2xl bg-gradient-to-r from-primary to-secondary text-white flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div
+                        data-aos="fade-up"
+                        data-aos-delay="500"
+                        className="md:col-span-2 lg:col-span-3 p-8 rounded-2xl bg-gradient-to-r from-primary to-secondary text-white flex flex-col md:flex-row items-center justify-between gap-6"
+                    >
                         <div>
                             <p className="text-sm font-bold uppercase tracking-widest opacity-70 mb-2">Our Promise</p>
                             <h3 className="text-2xl md:text-3xl font-black tracking-tight">

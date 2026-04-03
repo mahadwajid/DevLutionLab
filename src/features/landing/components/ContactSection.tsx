@@ -8,7 +8,7 @@ export default function ContactSection() {
                 <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
 
                     {/* Left: Text Info */}
-                    <div className="flex-1 space-y-10">
+                    <div className="flex-1 space-y-10" data-aos="fade-right" data-aos-delay="100">
                         <div>
                             <span className="text-xs font-bold text-secondary uppercase tracking-widest">Start a Project</span>
                             <h2 className="mt-3 text-5xl md:text-6xl font-black tracking-tighter leading-none text-zinc-900">
@@ -58,7 +58,7 @@ export default function ContactSection() {
                     </div>
 
                     {/* Right: Form */}
-                    <div className="flex-1">
+                    <div className="flex-1" data-aos="fade-left" data-aos-delay="200">
                         <form
                             action="https://formspree.io/f/xeelezlr"
                             method="POST"

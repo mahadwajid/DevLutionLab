@@ -62,22 +62,38 @@ export default function HeroSection() {
 
                     {/* Left Column */}
                     <div className="flex flex-col space-y-8">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-secondary/20 bg-secondary/5 w-fit">
+                        <div
+                            data-aos="fade-down"
+                            data-aos-delay="100"
+                            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-secondary/20 bg-secondary/5 w-fit"
+                        >
                             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
                             <span className="text-[10px] font-bold text-secondary tracking-widest uppercase">Innovation Hub</span>
                         </div>
 
-                        <h1 className="text-4xl md:text-5xl lg:text-[64px] font-black text-text-primary leading-[1.08] tracking-tight">
+                        <h1
+                            data-aos="fade-up"
+                            data-aos-delay="200"
+                            className="text-4xl md:text-5xl lg:text-[64px] font-black text-text-primary leading-[1.08] tracking-tight"
+                        >
                             Empowering Businesses with{' '}
                             <span className="text-gradient-blue">high Intelligence!</span>
                         </h1>
 
-                        <p className="max-w-xl text-lg text-text-muted leading-relaxed">
+                        <p
+                            data-aos="fade-up"
+                            data-aos-delay="300"
+                            className="max-w-xl text-lg text-text-muted leading-relaxed"
+                        >
                             Transforming enterprises with AI/ML model development, cutting-edge web solutions, scalable SAAS products, and robust ERP-based systems.
                         </p>
 
                         {/* Stats */}
-                        <div className="flex items-center gap-8 pt-2">
+                        <div
+                            data-aos="fade-up"
+                            data-aos-delay="400"
+                            className="flex items-center gap-8 pt-2"
+                        >
                             {STATS.map((s) => (
                                 <div key={s.label}>
                                     <div className="text-3xl font-black text-text-primary">{s.value}</div>
@@ -87,7 +103,11 @@ export default function HeroSection() {
                         </div>
 
                         {/* Social Icons */}
-                        <div className="flex items-center gap-4">
+                        <div
+                            data-aos="fade-up"
+                            data-aos-delay="500"
+                            className="flex items-center gap-4"
+                        >
                             {[
                                 { name: 'linkedin', link: 'https://www.linkedin.com/company/devlutionlab/' },
                                 { name: 'facebook', link: 'https://www.facebook.com/devlutionlab/' },
@@ -111,7 +131,11 @@ export default function HeroSection() {
                         </div>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-wrap items-center gap-4">
+                        <div
+                            data-aos="fade-up"
+                            data-aos-delay="600"
+                            className="flex flex-wrap items-center gap-4"
+                        >
                             <Link
                                 href="#contact"
                                 className="px-8 py-4 rounded-full bg-secondary text-white font-bold hover:brightness-110 hover:shadow-lg hover:shadow-secondary/30 transition-all active:scale-95"
@@ -128,13 +152,19 @@ export default function HeroSection() {
                     </div>
 
                     {/* Right Column — Tech Badge Grid */}
-                    <div className="hidden lg:block">
+                    <div
+                        data-aos="fade-left"
+                        data-aos-delay="300"
+                        className="hidden lg:block"
+                    >
                         <div className="bg-white/60 backdrop-blur-sm border border-border rounded-3xl p-8 shadow-xl shadow-primary/5">
                             <p className="text-xs font-bold text-text-muted uppercase tracking-widest mb-6">Our Technology Stack</p>
                             <div className="grid grid-cols-2 gap-4">
-                                {TECH_BADGES.map((tech) => (
+                                {TECH_BADGES.map((tech, i) => (
                                     <div
                                         key={tech.label}
+                                        data-aos="zoom-in"
+                                        data-aos-delay={400 + i * 80}
                                         className="flex items-center gap-3 p-4 rounded-2xl border border-border bg-surface hover:border-secondary/30 hover:shadow-md transition-all duration-200 group"
                                         style={{ background: tech.bg }}
                                     >

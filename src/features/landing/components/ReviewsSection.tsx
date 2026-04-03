@@ -30,7 +30,7 @@ export default function ReviewsSection() {
             <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
 
                 {/* Header */}
-                <div className="text-center mb-8">
+                <div className="text-center mb-8" data-aos="fade-up">
                     <span className="text-xs font-bold text-secondary uppercase tracking-widest">Client Stories</span>
                     <h2 className="mt-3 text-4xl md:text-5xl font-black tracking-tight text-text-primary">
                         Testimonials
@@ -40,9 +40,11 @@ export default function ReviewsSection() {
 
                 {/* Reviews Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {REVIEWS.map((review) => (
+                    {REVIEWS.map((review, i) => (
                         <div
                             key={review.id}
+                            data-aos="fade-up"
+                            data-aos-delay={i * 120}
                             className="group flex flex-col bg-white p-8 rounded-2xl border border-border shadow-sm hover:shadow-md hover:border-secondary/20 transition-all duration-200"
                         >
                             {/* Quote icon */}
@@ -53,7 +55,7 @@ export default function ReviewsSection() {
                             </div>
 
                             <p className="text-zinc-600 leading-relaxed text-sm flex-1 mb-6">
-                                "{review.quote}"
+                                &quot;{review.quote}&quot;
                             </p>
 
                             <div className="pt-6 border-t border-zinc-100">

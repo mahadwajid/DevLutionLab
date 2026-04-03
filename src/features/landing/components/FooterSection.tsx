@@ -9,7 +9,7 @@ export default function FooterSection() {
                 <div className="flex flex-col md:flex-row justify-between items-start gap-10 pb-12 border-b border-white/10">
 
                     {/* Brand */}
-                    <div className="space-y-4 max-w-xs">
+                    <div className="space-y-4 max-w-xs" data-aos="fade-right" data-aos-delay="100">
                         <div className="flex items-center gap-2">
                             <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center shadow-lg shadow-secondary/30">
                                 <span className="text-white font-bold text-lg">D</span>
@@ -24,7 +24,7 @@ export default function FooterSection() {
                     </div>
 
                     {/* Nav columns */}
-                    <div className="flex flex-wrap gap-12">
+                    <div className="flex flex-wrap gap-12" data-aos="fade-left" data-aos-delay="200">
                         <div>
                             <p className="text-xs font-bold tracking-widest uppercase text-white/40 mb-4">Company</p>
                             <ul className="space-y-3">
@@ -78,7 +78,11 @@ export default function FooterSection() {
                 </div>
 
                 {/* Bottom bar */}
-                <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div
+                    className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                >
                     <span className="text-xs text-white/40 tracking-widest uppercase">
                         © {new Date().getFullYear()} DevLution Lab. All Rights Reserved.
                     </span>

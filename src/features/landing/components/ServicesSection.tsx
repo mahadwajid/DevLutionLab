@@ -52,7 +52,7 @@ export default function ServicesSection() {
             <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
 
                 {/* Header */}
-                <div className="text-center mb-8">
+                <div className="text-center mb-8" data-aos="fade-up">
                     <span className="text-xs font-bold text-secondary uppercase tracking-widest">What We Offer</span>
                     <h2 className="mt-3 text-4xl md:text-5xl font-black tracking-tight text-text-primary">
                         Our Services
@@ -62,9 +62,11 @@ export default function ServicesSection() {
 
                 {/* 3×2 Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {SERVICES.map((service) => (
+                    {SERVICES.map((service, i) => (
                         <div
                             key={service.id}
+                            data-aos="fade-up"
+                            data-aos-delay={i * 80}
                             className="group bg-white rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-lg hover:border-secondary/20 transition-all duration-300"
                         >
                             {/* Image */}
