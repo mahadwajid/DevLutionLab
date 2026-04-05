@@ -4,6 +4,16 @@ import Image from 'next/image';
 const PROJECTS = [
     {
         id: 1,
+        title: 'NATIONAL TECHNOLOGY DEVELOPMENT PROGRAM (NTDP)',
+        category: 'SAUDI GOVERNMENT INITIATIVE',
+        description: 'A national-level digital initiative by the Kingdom of Saudi Arabia focused on strengthening the technology ecosystem and accelerating sustainable growth. NTDP drives innovation through strategic programs, supports startups and investors, and enhances key enablers to position Saudi Arabia as a leading regional hub for technology, innovation, and digital transformation.',
+        tags: ['NEXT.JS', 'DASHBOARD', 'GOVTECH'],
+        accent: 'bg-green-600',
+        link: 'https://ntdp.gov.sa/home', // add your project link if available
+        image: '/images/DA5.png',
+    },
+    {
+        id: 2,
         title: 'MEDSYNC APPOINTMENT PLATFORM',
         category: 'HEALTHCARE MANAGEMENT SYSTEM',
         description: 'A full-stack doctor appointment and clinic workflow platform enabling real-time scheduling, patient record handling, and secure authentication.',
@@ -13,7 +23,7 @@ const PROJECTS = [
         image: '/images/DA1.png',
     },
     {
-        id: 2,
+        id: 3,
         title: 'RIYADH DIGITAL AGENCY PLATFORM',
         category: 'BUSINESS WEBSITE SYSTEM',
         description: 'A modern React agency website built for a Saudi client, optimized for performance, branding, and responsive UX.',
@@ -23,7 +33,7 @@ const PROJECTS = [
         image: '/images/DA2.png',
     },
     {
-        id: 3,
+        id: 4,
         title: 'MYTAILOR DIGITAL COMMERCE EXPERIENCE',
         category: 'CUSTOM TAILORING PLATFORM',
         description: 'A business website developed for CodeCrush Technology Pakistan showcasing tailoring services and digital presence.',
@@ -33,7 +43,7 @@ const PROJECTS = [
         image: '/images/DA3.png',
     },
     {
-        id: 4,
+        id: 5,
         title: 'SENTINEL NETWORK DEFENSE SYSTEM',
         category: 'CYBERSECURITY / IDS',
         description: 'A custom intrusion detection system designed to monitor traffic, detect anomalies, and improve infrastructure security.',
@@ -41,8 +51,8 @@ const PROJECTS = [
         accent: 'bg-orange-500',
         image: '/images/DA4.png',
     },
-       {
-        id: 5,
+    {
+        id: 6,
         title: 'RUSHFUNDED - TRADING PLATFORM',
         category: 'TRADING CRYPTO WEB 3.0',
         description: 'Complete Product Design, UI / UX',
