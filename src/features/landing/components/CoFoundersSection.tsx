@@ -29,6 +29,15 @@ const FOUNDERS = [
         linkedin: 'https://www.linkedin.com/in/saud-khan-dev/',
         instagram: '#',
     },
+     {
+        id: 4,
+        name: 'Bilal Khattak',
+        role: 'Business Development Lead',
+        bio: 'Driving growth through strategic partnerships and client acquisition.',
+        image: '/assets/team/Bilal.png',
+        linkedin: 'https://www.linkedin.com/in/hazrat-bilal7/',
+        instagram: '#',
+    },
 ];
 
 export default function CoFoundersSection() {
