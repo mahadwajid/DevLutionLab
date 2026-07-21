@@ -74,7 +74,7 @@ export default function CoFoundersSection() {
                                 />
 
                                 {/* Overlay */}
-                                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-4">
+                                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-3">
                                     <a
                                         href={founder.linkedin}
                                         className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-zinc-800 hover:bg-secondary hover:text-white transition"
